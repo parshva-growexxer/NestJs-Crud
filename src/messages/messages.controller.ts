@@ -44,11 +44,17 @@ export class MessagesController {
     if (!id) {
       throw new NotFoundException('There should be ID in params');
     }
-    const message = await this.messagesService.update(id, body);
-    if (!message) {
-      throw new NotFoundException('Message Not found');
+    body.content = body.content.trim();
+    if (!body.content && body.content === '') {
+      return {
+        code: '400',
+        message: ['There should Content'],
+      };
     }
-    return message;
+    await this.messagesService.update(id, body);
+    return {
+      message: 'Update Message successfully',
+    };
   }
 
   @Delete('/:id')
@@ -58,7 +64,7 @@ export class MessagesController {
     }
     await this.messagesService.deleteOne(id);
     return {
-      code: '200',
+      statusCode: '200',
       message: ['Delete data successfully!!'],
     };
   }
