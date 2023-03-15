@@ -43,8 +43,11 @@ Create the .env file Which has the Feilds
 POSTGRES_HOST=
 <br/>
 POSTGRES_PORT=
+<br/>
 POSTGRES_USER=
+<br/>
 POSTGRES_PASSWORD=
+<br/>
 POSTGRES_DATABASE=
 
 ```bash
