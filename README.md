@@ -30,6 +30,8 @@
 
 ```bash
 $ npm install
+$ npm i -g @nestjs/cli
+$ nest new <proejct-name>
 ```
 
 ## Running the app
@@ -37,7 +39,9 @@ $ npm install
 Create The Db Names "messages" in prosgress
 
 Create the .env file Which has the Feilds
+<br/>
 POSTGRES_HOST=
+<br/>
 POSTGRES_PORT=
 POSTGRES_USER=
 POSTGRES_PASSWORD=
